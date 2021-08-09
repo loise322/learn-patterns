@@ -6,13 +6,13 @@ namespace patterns.FactoryMethod.Models
 {
     public abstract class Creator
     {
-        public string Name { get; set; }
 
-        public Creator(string name)
+        public void TestRoad()
         {
-            Name = name;
+            ICar car = GetCar();
+            car.Drive();
         }
 
-        public abstract Car CreateCar();
+        public abstract ICar GetCar();
     }
 }

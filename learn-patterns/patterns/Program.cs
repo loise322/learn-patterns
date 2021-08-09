@@ -2,6 +2,7 @@
 using patterns.Builder;
 using patterns.Decorator;
 using patterns.FactoryMethod;
+using patterns.FactoryMethod.Models;
 using System;
 
 namespace patterns
@@ -16,7 +17,10 @@ namespace patterns
             PizzaService pizzaService = new PizzaService();
             pizzaService.TestPizzaDecorator();
 
-            FactoryMethodCarService factoryMethodCarService = new FactoryMethodCarService();
+            FactoryMethodCarService factoryMethodCarService = new FactoryMethodCarService(RoadType.Classic);
+            factoryMethodCarService.TestFactoryMethod();
+
+            factoryMethodCarService = new FactoryMethodCarService(RoadType.Sport);
             factoryMethodCarService.TestFactoryMethod();
 
             AbstractFactoryService abstractFactoryService = new AbstractFactoryService();

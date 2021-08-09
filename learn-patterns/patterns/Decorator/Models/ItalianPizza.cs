@@ -4,15 +4,11 @@ using System.Text;
 
 namespace patterns.Decorator.Models
 {
-    public class ItalianPizza : Pizza
+    public class ItalianPizza : IPizza
     {
-        public ItalianPizza() : base("Italian pizza")
+        public void Cook()
         {
-        }
-
-        public override int GetCost()
-        {
-            return 10;
+            Console.WriteLine("Итальянская пицца");
         }
     }
 }

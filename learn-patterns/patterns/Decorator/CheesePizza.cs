@@ -5,15 +5,18 @@ using System.Text;
 
 namespace patterns.Decorator
 {
-    public class CheesePizza : PizzaDecorator
+    public class CheesePizza : IPizzaDecorator
     {
-        public CheesePizza(Pizza pizza) : base($"CheesePizza({pizza.Name})", pizza)
+        protected IPizza _pizza;
+        public CheesePizza(IPizza pizza)
         {
+            _pizza = pizza;
         }
 
-        public override int GetCost()
+        public void Cook()
         {
-            return _pizza.GetCost() + 10;
+            _pizza.Cook();
+            Console.WriteLine("Добавили сыра");
         }
     }
 }

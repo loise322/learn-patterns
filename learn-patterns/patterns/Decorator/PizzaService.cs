@@ -13,16 +13,16 @@ namespace patterns.Decorator
             Console.WriteLine();
 
             Console.WriteLine("Декорирование русской пиццы сначало в томатную, потом в сырную");
-            Pizza russianPizza = new RussianPizza();
+            IPizza russianPizza = new RussianPizza();
             russianPizza = new TomatoPizza(russianPizza);
             russianPizza = new CheesePizza(russianPizza);
-            Console.WriteLine($"Пицца: {russianPizza.Name}, Стоимость: {russianPizza.GetCost()}");
+            russianPizza.Cook();
             Console.WriteLine();
 
             Console.WriteLine("Декорирование итальянской пиццы в томатную");
-            Pizza italianPizza = new ItalianPizza();
+            IPizza italianPizza = new ItalianPizza();
             italianPizza = new TomatoPizza(italianPizza);
-            Console.WriteLine($"Пицца: {italianPizza.Name}, Стоимость: {italianPizza.GetCost()}");
+            italianPizza.Cook();
             Console.WriteLine();
         }
     }
