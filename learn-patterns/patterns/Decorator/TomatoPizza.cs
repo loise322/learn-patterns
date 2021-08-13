@@ -5,7 +5,7 @@ using System.Text;
 
 namespace patterns.Decorator
 {
-    public class TomatoPizza : IPizzaDecorator
+    public class TomatoPizza : IPizza
     {
         protected IPizza _pizza;
         public TomatoPizza(IPizza pizza)

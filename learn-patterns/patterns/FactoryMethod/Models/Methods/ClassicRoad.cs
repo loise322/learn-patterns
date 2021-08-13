@@ -5,11 +5,11 @@ using System.Text;
 
 namespace patterns.FactoryMethod.Models.Methods
 {
-    public class SportCreator : Creator
+    public class ClassicRoad : Race
     {
         public override ICar GetCar()
         {
-            return new SportCar();
+            return new ClassicCar();
         }
     }
 }
